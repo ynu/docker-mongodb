@@ -2,6 +2,7 @@ FROM mongo
 
 RUN mkdir /config
 RUN mkdir /log
-RUN mkdir /key
+COPY /mongodb-keyfile /keyfile
+chmod 600 /keyfile
 
 CMD ["mongod"]
